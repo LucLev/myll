@@ -19,9 +19,9 @@ export class MyServiceService {
     this.client = http;
   }
 
-  public getAll():Observable<BarleyObservation[]>{
+  public getAll(){
 
-    let obs:Observable<any> = this.client.get(url:"https://api.capgrain.com/barley-observations");
+    let obs:Observable<any> = this.client.get("https://api.capgrain.com/barley-observations");
     let treatment = (data:any) => {
       return data.bar
     }
