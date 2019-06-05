@@ -4,9 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # MODULES:
 
-npm install primeng --save
-npm install primeicons --save
-npm install --save @angular/material @angular/cdk @angular/animations
+`npm install primeng --save`
+`npm install primeicons --save`
+`npm install --save @angular/material @angular/cdk @angular/animations`
 
 ## Development server
 
