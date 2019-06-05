@@ -7,13 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { NewInfoComponent } from './new-info/new-info.component';
 import { StatsComponent } from './stats/stats.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BarleyObservationComponent } from './barley-observation/barley-observation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NewInfoComponent,
-    StatsComponent
+    StatsComponent,
+    BarleyObservationComponent
   ],
   imports: [
     BrowserModule,
