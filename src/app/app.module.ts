@@ -7,20 +7,21 @@ import { HomeComponent } from './home/home.component';
 import { NewInfoComponent } from './new-info/new-info.component';
 import { StatsComponent } from './stats/stats.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BarleyObservationComponent } from './barley-observation/barley-observation.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MyServiceService } from './my-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NewInfoComponent,
-    StatsComponent,
-    BarleyObservationComponent
+    StatsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

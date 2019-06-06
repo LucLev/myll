@@ -13,19 +13,20 @@ import { WheatObservation } from './wheat-observation';
 })
 export class MyServiceService {
 
-  private client:HttpClient;
+  private client:HttpClient
 
-  constructor( http:HttpClient) { 
-    this.client = http;
+  constructor(private httpclient: HttpClient) { 
+    this.client = httpclient;
   }
 
-  public getAll():Observable<BarleyObservation[]>{
+  public getComments(): Observable<BarleyObservation[]> {
+    
+    let obs:Observable<any> = this.client.get("https://api.capgrain.com/barley-observations");
 
-    let obs:Observable<any> = this.client.get(url:"https://api.capgrain.com/barley-observations");
     let treatment = (data:any) => {
-      return data.bar
-    }
+      return data["hydra:member"] as BarleyObservation[];
+    };
+    return obs.pipe(map(treatment));
   }
-  
-  
+
 }
