@@ -1,7 +1,13 @@
 <router-outlet></router-outlet>
 
-<div *ngFor="let barle of barley">
-    <p>{{ barle.id }}</p>
-    <p>{{ barle.yield }}</p>
-    <p>{{ barle.place }}</p>
+<div *ngFor="let barl of barley">
+  <p>{{ barl.email }}</p>
 </div>
+<hr>
+
+<div *ngFor="let cor of corn">
+  <p>{{ cor.phone }}</p>
+  <p>{{ cor.comment }}</p>
+  <p>{{ cor.humidity }}</p>
+</div>
+

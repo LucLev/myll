@@ -27,6 +27,16 @@ export class MyServiceService {
       return data["hydra:member"] as BarleyObservation[];
     };
     return obs.pipe(map(treatment));
+  };
+
+  public getCorn(): Observable<CornObservation[]> {
+    
+    let obs:Observable<any> = this.client.get("https://api.capgrain.com/corn-observations");
+
+    let treatment = (data:any) => {
+      return data["hydra:member"] as CornObservation[];
+    };
+    return obs.pipe(map(treatment));
   }
 
 }
