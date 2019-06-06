@@ -8,6 +8,7 @@ import { NewInfoComponent } from './new-info/new-info.component';
 import { StatsComponent } from './stats/stats.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -17,13 +18,14 @@ import { HeaderComponent } from './header/header.component';
     NewInfoComponent,
     StatsComponent,
     HeaderComponent,
+    FooterComponent,
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
