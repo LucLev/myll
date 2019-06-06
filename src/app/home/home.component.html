@@ -1,18 +1,34 @@
+<app-header></app-header> 
+<div class="margin">
+    <div class="row">
+        <div class="col-3 offset-1">
+            <button class="favorite styled"type="button">Carte</button>
+        </div>
+        
+        <div class="col-3 offset-1">
+            <button class="favorite styled"type="button">Mes infos</button>
+        </div>
+
+        <div class="col-3 offset-1">
+            <button class="favorite styled"type="button">Stat</button> 
+        </div>
+    </div>
+</div>
 <div class="container">
-  <div class="col-8 offset-2" id="map">
-    <!-- Map -->
+    <div class="col-8 offset-2" id="map">
+      <!-- Map -->
+    </div>
   </div>
-</div>
-<input type="number" [(ngModel)]="setLat1">
-<input type="number" [(ngModel)]="setLon1">
-
-
-<button (click)="addToMap(setLat1,setLon1,'sauce')">BOUTTOU</button>
-<span>{{message}}</span>
-
-<div *ngIf="geolocationPosition">
- <!--{{geolocationPosition.coords}}-->
- {{geolocationPosition.coords.latitude}}
- {{geolocationPosition.coords.longitude}}
-</div>
-<button ng (click)="youAreHere()">where am i?</button>
+  <input type="number" [(ngModel)]="setLat1">
+  <input type="number" [(ngModel)]="setLon1">
+  
+  
+  <button (click)="addToMap(setLat1,setLon1,'sauce')">BOUTTOU</button>
+  <span>{{message}}</span>
+  
+  <div *ngIf="geolocationPosition">
+   <!--{{geolocationPosition.coords}}-->
+   {{geolocationPosition.coords.latitude}}
+   {{geolocationPosition.coords.longitude}}
+  </div>
+  <button ng (click)="youAreHere()">where am i?</button>
