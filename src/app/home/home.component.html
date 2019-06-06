@@ -1,3 +1,18 @@
-<p>
-  home works!
-</p>
+<div class="container">
+  <div class="col-8 offset-2" id="map">
+    <!-- Map -->
+  </div>
+</div>
+<input type="number" [(ngModel)]="setLat1">
+<input type="number" [(ngModel)]="setLon1">
+
+
+<button (click)="addToMap(setLat1,setLon1,'sauce')">BOUTTOU</button>
+<span>{{message}}</span>
+
+<div *ngIf="geolocationPosition">
+ <!--{{geolocationPosition.coords}}-->
+ {{geolocationPosition.coords.latitude}}
+ {{geolocationPosition.coords.longitude}}
+</div>
+<button ng (click)="youAreHere()">where am i?</button>
