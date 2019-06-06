@@ -1,13 +1,31 @@
 <router-outlet></router-outlet>
 
-<div *ngFor="let barl of barley">
-  <p>{{ barl.email }}</p>
+<div *ngFor="let bar of barley">
+    <p>{{ bar.phone }}</p>
+    <p>{{ bar.comment }}</p>
+    <p>{{ bar.humidity }}</p>
 </div>
 <hr>
-
 <div *ngFor="let cor of corn">
-  <p>{{ cor.phone }}</p>
-  <p>{{ cor.comment }}</p>
-  <p>{{ cor.humidity }}</p>
+    <p>{{ cor.phone }}</p>
+    <p>{{ cor.comment }}</p>
+    <p>{{ cor.humidity }}</p>
 </div>
-
+<hr>
+<div *ngFor="let rap of rapeseed">
+    <p>{{ rap.phone }}</p>
+    <p>{{ rap.comment }}</p>
+    <p>{{ rap.humidity }}</p>
+</div>
+<hr>
+<div *ngFor="let sun of sunflower">
+    <p>{{ sun.phone }}</p>
+    <p>{{ sun.comment }}</p>
+    <p>{{ sun.humidity }}</p>
+</div>
+<hr>
+<div *ngFor="let climat of wheat">
+    <p>{{ climat.phone }}</p>
+    <p>{{ climat.comment }}</p>
+    <p>{{ climat.humidity }}</p>
+</div>
