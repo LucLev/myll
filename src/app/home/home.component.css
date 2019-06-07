@@ -1,15 +1,22 @@
 .bouton{
-    color: #337ab7;
+    color: #565656;
 }
 
 .bouton:hover {
-    background-color: green;
+    background-color: #e9b537;
     color: white;
 }
 
 #map{
-    height: 400px;
+    height: 500px;
+    border: solid 1px #c0c0c0
+
 }
 .btn-grey{
  background: grey;
+}
+
+.back {
+    width: 70%;
+    background-color: #f8f8f8;
 }
