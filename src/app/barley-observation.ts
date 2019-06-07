@@ -1,23 +1,20 @@
 export class BarleyObservation {
-
-    constructor() {
-    }
-
-    public specificWeight: number
-    public email: string
-    public phone?: string
-    public variety?: string
-    public yield: number
-    public humidity?: number
-    public yieldNotation: number
-    public nitrogenQuantityUsed: number
-    public nitrogenProductUsed: string
-    public comment?: string
-    public cultivationMethod: string
-    public targetPrice?: number
-    public place: string
-    public coordinates: string
-    public id?: string
-    public createdAt: string
+     
+     specificWeight: number;
+     email: string;
+     phone?: string;
+     variety?: string;
+     yield: number;
+     humidity?: number;
+     yieldNotation: number;
+     nitrogenQuantityUsed: number;
+     nitrogenProductUsed: string;
+     comment?: string;
+     cultivationMethod: string;
+     targetPrice?: number;
+     place: string;
+     coordinates: string;
+     id?: string;
+     createdAt: string;
 
 }

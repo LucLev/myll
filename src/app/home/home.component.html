@@ -2,6 +2,18 @@
 <br><br>
 
 <div class="container text-center mb-3">
+
+
+<app-header></app-header>
+
+<div class="text-center mb-3">
+        <button type="button" class="col-3 col-sm-1 btn btn-success font-weight-bold">MAP</button>
+        <button type="button" class="offset-5 col-3 col-sm-1 btn btn-success font-weight-bold">ADD MY RESULTS</button>
+</div>
+
+<app-header></app-header> 
+<div class="margin">
+
     <div class="row">
         <div class="col-4"></div>
 
@@ -14,3 +26,21 @@
         <br>
     </div>
 </div>
+<div class="container">
+    <div class="col-8 offset-2" id="map">
+      <!-- Map -->
+    </div>
+  </div>
+  <input type="number" [(ngModel)]="setLat1">
+  <input type="number" [(ngModel)]="setLon1">
+  
+  
+  <button (click)="addToMap(setLat1,setLon1,'sauce')">BOUTTOU</button>
+  <span>{{message}}</span>
+  
+  <div *ngIf="geolocationPosition">
+   <!--{{geolocationPosition.coords}}-->
+   {{geolocationPosition.coords.latitude}}
+   {{geolocationPosition.coords.longitude}}
+  </div>
+  <button ng (click)="youAreHere()">where am i?</button>

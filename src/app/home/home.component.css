@@ -6,3 +6,10 @@
     background-color: green;
     color: white;
 }
+
+#map{
+    height: 400px;
+}
+.btn-grey{
+ background: grey;
+}

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,9 @@ import { StatsComponent } from './stats/stats.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import {MatButtonModule} from '@angular/material/button';
+import { FooterComponent } from './footer/footer.component';
+import { ButtonsTypeComponent } from './buttons-type/buttons-type.component';
+
 
 @NgModule({
   declarations: [
@@ -17,14 +21,17 @@ import {MatButtonModule} from '@angular/material/button';
     NewInfoComponent,
     StatsComponent,
     HeaderComponent,
-   
+    FooterComponent,
+    ButtonsTypeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
