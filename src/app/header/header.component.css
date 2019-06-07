@@ -6,7 +6,11 @@ h1{
 }
 
 strong{
-    color: #5a9449;
+    color: #565656;
     font-style: italic;
     font-size: 4.5rem;
+}
+
+.live {
+    background-color: #e9b537
 }
