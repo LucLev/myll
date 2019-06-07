@@ -27,7 +27,7 @@ export class MyServiceService {
       return data["hydra:member"] as BarleyObservation[];
     };
     return obs.pipe(map(treatment));
-  }
+  };
 
   public getCorn(): Observable<CornObservation[]> {
     
