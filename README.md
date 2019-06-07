@@ -7,6 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 `npm install primeng --save`
 `npm install primeicons --save`
 `npm install --save @angular/material @angular/cdk @angular/animations`
+`npm i leaflet`
 
 ## Development server
 
