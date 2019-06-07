@@ -15,7 +15,7 @@ export class CornObservation {
     public cultivationMethod: string;
     public targetPrice?: number;
     public place: string;
-    public coordinates: string;
+    public coordinates: Coordinates;
     public id?: string;
     public createdAt?: string;
 

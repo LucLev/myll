@@ -21,9 +21,9 @@
   </div>
   <input type="number" [(ngModel)]="setLat1">
   <input type="number" [(ngModel)]="setLon1">
+  <input type="number" [(ngModel)]="setIcon">
   
-  
-  <button (click)="addToMap(setLat1,setLon1,'sauce')">BOUTTOU</button>
+  <button (click)="addToMap(setLat1,setLon1,'sauce',setIcon)">BOUTTOU</button>
   <span>{{message}}</span>
   
   <div *ngIf="geolocationPosition">
@@ -31,4 +31,6 @@
    {{geolocationPosition.coords.latitude}}
    {{geolocationPosition.coords.longitude}}
   </div>
-  <button ng (click)="youAreHere()">where am i?</button>
+  <button (click)="youAreHere()">where am i?</button>
+  <button (click)="getNearStats(0)">GETSTAT</button>
+  <div>{{yieldavg}}</div>

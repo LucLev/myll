@@ -13,7 +13,7 @@ export class BarleyObservation {
      cultivationMethod: string;
      targetPrice?: number;
      place: string;
-     coordinates: string;
+     coordinates: Coordinates;
      id?: string;
      createdAt: string;
 
