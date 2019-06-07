@@ -1,132 +1,131 @@
-<form>
-
-    <div class="form-group">
-        <label for="specificWeight">Poid volumique</label>
-        <input required minlength="1" maxlength="100" [(ngModel)]="specificWeight"  #SpecificWeight="ngModel" (change)="log(specificWeight)"
-          id="specificWeight" type="text" class="form-control">
-        <div class="alert alert-danger" *ngIf=" !specificWeight.valid ">
-          <div *ngIf="specificWeight.errors.required">Poid volumique est requis.</div>
-          <div *ngIf="specificWeight.errors.minlength">Poid volumique minimum.</div>
-        </div>
-      </div>  
-
-      <div class="form-group">
-          <label for="yieldNotation">Notation de rendement</label>
-          <input required minlength="1" maxlength="10" [(ngModel)]="yieldNotation"  #YieldNotation="ngModel" (change)="log(yieldNotation)"
-            id="yieldNotation" type="text" class="form-control">
-          <div class="alert alert-danger" *ngIf=" !yieldNotation.valid ">
-            <div *ngIf="yieldNotation.errors.required">une notation est requise .</div>
-            <div *ngIf="yieldNotation.errors.minlength">une notation doit apparaitre.</div>
-          </div>
-        </div>
-
-        
-
-  
-
-
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
 
   <div class="form-group">
-    <label for="place">Place</label>
-    <input required minlength="5" maxlength="15" [(ngModel)]="place"  #Place="ngModel" (change)="log(place)"
-      id="place" type="text" class="form-control">
-    <div class="alert alert-danger" *ngIf=" !place.valid ">
-      <div *ngIf="place.errors.required">place is required.</div>
-      <div *ngIf="place.errors.minlength">place should be minimum 3 charactères.</div>
+    <label for="specificWeight">Poid volumique</label>
+    <input required [(ngModel)]="specificWeight" name="specificWeight" #SpecificWeight="ngModel" id="specificWeight"
+      type="number" class="form-control">
+  </div>
+  <div *ngIf="myForm.submitted">
+    <div class="alert alert-danger" *ngIf=" SpecificWeight.errors ">
+      <span *ngIf="SpecificWeight.errors.required">Poid volumique est requis.</span>
+      <span *ngIf="SpecificWeight.errors.minlength">Poid volumique minimum.</span>
     </div>
   </div>
 
+  <div class="form-group">
+    <label for="yieldNotation">Notation de rendement</label>
+    <input required min="1" max="5" [(ngModel)]="yieldNotation" #YieldNotation="ngModel" name="yNotation"
+      id="yieldNotation" type="number" class="form-control">
 
+    <div class="alert alert-danger" *ngIf=" YieldNotation.errors ">
+      <div *ngIf="YieldNotation.errors.required">une notation est requise .</div>
+      <div *ngIf="YieldNotation.errors.minlength">une notation doit apparaitre.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="place">Place</label>
+    <input required minlength="5" maxlength="15" [(ngModel)]="place" #Place="ngModel" id="place" name="place"
+      type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="Place.errors">
+      <div *ngIf="Place.errors.required">place is required.</div>
+      <div *ngIf="Place.errors.minlength">place should be minimum 3 charactères.</div>
+    </div>
+  </div>
 
   <div class="form-group">
     <label for="variety">variety</label>
-    <input required minlength="5" maxlength="15" [(ngModel)]="variety"  #Variety="ngModel" (change)="log(variety)"
-      id="variety" type="text" class="form-control">
-    <div class="alert alert-danger" *ngIf=" !variety.valid ">
-      <div *ngIf="variety.errors.required">Variety is required.</div>
-      <div *ngIf="variety.errors.minlength">Variety should be minimum 5 charactères.</div>
+    <input minlength="5" maxlength="15" [(ngModel)]="variety" #Variety="ngModel" name="variety" id="variety" type="text"
+      class="form-control">
+    <div class="alert alert-danger" *ngIf="Variety.errors">
+      <div *ngIf="Variety.errors.required">Variety is required.</div>
+      <div *ngIf="Variety.errors.minlength">Variety should be minimum 5 charactères.</div>
     </div>
   </div>
 
   <div class="form-group">
     <label for="yield">yield</label>
-    <input required minlength="1" maxlength="15" [(ngModel)]="yield"  #Yield="ngModel" (change)="log(yield)" id="yield"
-      type="text" class="form-control">
-    <div class="alert alert-danger" *ngIf=" !yield.valid ">
-      <div *ngIf="yield.errors.required">Yield is required.</div>
-      <div *ngIf="yield.errors.minlength">Yield should be minimum 1 number.</div>
+    <input [(ngModel)]="yield" #Yield="ngModel" id="yield" name="yield" type="number" class="form-control">
+    <div class="alert alert-danger" *ngIf="Yield.errors">
+      <div *ngIf="Yield.errors.required">Yield is required.</div>
+      <div *ngIf="Yield.errors.minlength">Yield should be minimum 1 number.</div>
     </div>
   </div>
 
   <div class="form-group">
     <label for="humidity">humidity</label>
-    <input required minlength="1" maxlength="15" [(ngModel)]="humidity"  #Humidity="ngModel" (change)="log(humidity)"
-      id="humidity" type="text" class="form-control">
-    <div class="alert alert-danger" *ngIf=" !humidity.valid ">
-      <div *ngIf="humidity.errors.required">Humidity is required.</div>
-      <div *ngIf="humidity.errors.minlength">Humidity should be minimum 1 number.</div>
+    <input [(ngModel)]="humidity" #Humidity="ngModel" name="humidity" id="humidity" type="number" class="form-control">
+    <div class="alert alert-danger" *ngIf="Humidity.errors">
+      <div *ngIf="Humidity.errors.required">Humidity is required.</div>
+      <div *ngIf="Humidity.errors.minlength">Humidity should be minimum 1 number.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for=" cultivationMethod">Produit Nitrogène utilisé</label>
+    <input required minlength="5" maxlength="15" [(ngModel)]="nitrogenProductUsed" #NitrogenProductUsed="ngModel"
+      name="prduct" id="nitrogenProductUsed" type="text" class="form-control">
+    <div class="alert alert-danger" *ngIf="NitrogenProductUsed.errors">
+      <div *ngIf="NitrogenProductUsed.errors.required">champs requis.</div>
+      <div *ngIf="NitrogenProductUsed.errors.minlength">Le champs doit contenir au minimum 5 lettre.</div>
     </div>
   </div>
 
   <div class="form-group">
     <label for="nitrogenQuantityUsed">Quantité de Nitrogène</label>
-    <input required minlength="1" maxlength="15" [(ngModel)]="nitrogenQuantityUsed"  #NitrogenQuantityUsed="ngModel"
-      (change)="log(nitrogenQuantityUsed)" id="nitrogenQuantityUsed" type="text" class="form-control">
-    <div class="alert alert-danger" *ngIf=" !nitrogenQuantityUsed.valid ">
-      <div *ngIf="nitrogenQuantityUsed.errors.required">champs requis.</div>
-      <div *ngIf="nitrogenQuantityUsed.errors.minlength">le champs doit comporter un chiffre.</div>
+    <input required [(ngModel)]="nitrogenQuantityUsed" #NitrogenQuantityUsed="ngModel" name="nitroQtUsed"
+      id="nitrogenQuantityUsed" type="number" class="form-control">
+    <div class="alert alert-danger" *ngIf="NitrogenQuantityUsed.errors">
+      <div *ngIf="NitrogenQuantityUsed.errors.required">champs requis.</div>
+      <div *ngIf="NitrogenQuantityUsed.errors.minlength">le champs doit comporter un chiffre.</div>
     </div>
   </div>
 
-    <div class="form-group">
-        <label for=" cultivationMethod">Technique de production</label>
-        <input required minlength="5" maxlength="15" [(ngModel)]="cultivation"  #CultivationMethod="ngModel"
-          (change)="log(cultivationMethod)" id="cultivationMethod" type="text" class="form-control">
-        <div class="alert alert-danger" *ngIf=" !cultivationMethod.valid ">
-          <div *ngIf="cultivationMethod.errors.required">champs requis.</div>
-          <div *ngIf="cultivationMethod.errors.minlength">Le champs doit contenir au minimum 5 lettre.</div>
-        </div>
-      </div>
+  <div class="form-group">
+    <label for=" cultivationMethod">Technique de production</label>
+   <select class="form-control" id="tp" required [(ngModel)]="cultivationMethod" #CultivationMethod="ngModel"
+      name="cultiv">
+      <option [value]="con">conventionnelle</option>
+      <option [value]="scm">Methode simplifié</option>
+    </select>
 
-      <div class="form-group">
-          <label for=" targetPrice">Prix ciblés</label>
-          <input required minlength="1" maxlength="15" [(ngModel)]="targetPrice"  #TargetPrice="ngModel"
-            (change)="log(targetPrice)" id="targetPrice" type="text" class="form-control">
-          <div class="alert alert-danger" *ngIf=" !targetPrice.valid ">
-            <div *ngIf="targetPrice.errors.required">champs requis.</div>
-            <div *ngIf="targetPrice.errors.minlength">Le champs doit contenir au minimum 1 chiffre.</div>
-          </div>
-        </div>
+  </div>
+  
 
-       
+  <div class="form-group">
+    <label for=" targetPrice">Prix ciblés</label>
+    <input minlength="1" maxlength="15" [(ngModel)]="targetPrice" #TargetPrice="ngModel" name="tarPrice"
+      id="targetPrice" type="number" class="form-control">
+    <div class="alert alert-danger" *ngIf="TargetPrice.errors">
+      <div *ngIf="TargetPrice.errors.required">champs requis.</div>
+      <div *ngIf="TargetPrice.errors.minlength">Le champs doit contenir au minimum 1 chiffre.</div>
+    </div>
+  </div>
 
   <div class="form-group">
     <label for="email">Email</label>
-    <input required minlength="9" maxlength="50" [(ngModel)]="email"  #Email="ngModel"
-      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" (change)="log(email)" id="email" type="text" placeholder="Email"
+    <input required minlength="9" maxlength="50" [(ngModel)]="email" #Email="ngModel" n="ngModel"
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" type="text" placeholder="Email" name="mail"
       class="form-control">
-    <div class="alert alert-danger" *ngIf=" !email.valid ">
-      <div *ngIf="email.errors.required">Email is required.</div>
-      <div *ngIf="email.errors.pattern ">The email id doesn't seem right.</div>
+    <div class="alert alert-danger" *ngIf="Email.errors">
+      <div *ngIf="Email.errors.required">Email is required.</div>
+      <div *ngIf="Email.errors.pattern ">The email id doesn't seem right.</div>
     </div>
   </div>
 
-
   <div class="form-group">
     <label for="phoneNumber">phoneNumber</label>
-    <input required minlength="10" maxlength="10" [(ngModel)]="phoneNumber"  #PhoneNumber="ngModel"
-      (change)="log(phoneNumber)" id="phoneNumber" type="text" placeholder="phoneNumber" class="form-control">
-    <div class="alert alert-danger" *ngIf=" !phoneNumber.valid ">
-      <div *ngIf="phoneNumber.errors.required">
-        Phone number is required.
-      </div>
-      <div *ngIf="phoneNumber.errors.minlength">The phoneNumber id doesn't seem right</div>
+    <input required minlength="10" maxlength="10" [(ngModel)]="phoneNumber" #PhoneNumber="ngModel" name="numberPhone"
+      id="phoneNumber" type="text" placeholder="phoneNumber" class="form-control">
+    <div class="alert alert-danger" *ngIf=" PhoneNumber.errors">
+      <div *ngIf="PhoneNumber.errors.required">Phone number is required</div>
+      <div *ngIf="PhoneNumber.errors.minlength">The phoneNumber id doesn't seem right</div>
     </div>
   </div>
 
   <div class="form-group">
     <label for="typeofseed">Type of Seed</label>
-    <select class="form-control" id="power" required>
+    <select class="form-control" id="tseed" required>
       <option [value]="Corn">Corn</option>
       <option [value]="Barley">Barley</option>
       <option [value]="Wheat">Wheat</option>
@@ -135,13 +134,10 @@
     </select>
   </div>
 
-
-
-
-
   <div class="form-group">
     <label for="comment"></label>
     <textarea id="" cols="30" rows="10"></textarea>
   </div>
-    <button class="btn btn-primary" (click)="onValidForm()">Submit </button>
+  <button class="btn btn-primary" type="submit">Submit </button>
 </form>
+-->

@@ -3,6 +3,7 @@ import { InformationService } from '../information.service';
 import { BarleyObservation } from '../barley-observation';
 
 import { Coordinates } from '../coordinates';
+import { SafeSubscriber } from 'rxjs/internal/Subscriber';
 
 @Component({
   selector: 'app-formulaire',
@@ -11,28 +12,43 @@ import { Coordinates } from '../coordinates';
 })
 export class FormulaireComponent implements OnInit {
 
-  public testpost: BarleyObservation;
-  
+  testpost:BarleyObservation = {
+    specificWeight: 5,
+    email: 'sauce@Saf.net',
+    yield: 5,
+    yieldNotation: 5,
+    nitrogenQuantityUsed: 5,
+    nitrogenProductUsed: 'sas',
+    phone: '+33606060606',
+    cultivationMethod: 'conventional',
+    place: 'string',
+    coordinates:{
+      latitude:50,
+      longitude: 3
+    } 
+  }
+
   variety: string;
   place: string;
   specificWeight: number;
   email: string;
-  phone: number;
+  phone: string;
   yield: number;
   humidity: number;
   yieldNotation: number;
   nitrogenQuantityUsed: number;
   nitrogenProductUsed: string;
-  comment: number;
+  comment: string;
   cultivationMethod: string;
   targetPrice: number;
 
 
-  compilerReponse() {
+  onSubmit() {
     
 
-    this.testpost.variety
+    
     if (this.variety) {
+      this.testpost.variety = this.variety;
     };
     this.testpost.specificWeight = this.specificWeight;
 
@@ -46,24 +62,41 @@ export class FormulaireComponent implements OnInit {
 
     this.testpost.nitrogenProductUsed = this.nitrogenProductUsed;
 
-    this.testpost.cultivationMethod = this.cultivationMethod;
+    if(this.cultivationMethod){
+      this.testpost.cultivationMethod = 'simplified cultivation methods';
+    }
+    
+
+    this.testpost.coordinates.latitude = 55;
+    this.testpost.coordinates.longitude = 1;
 
     this.testpost.phone
     if (this.phone) {
+      this.phone = ("+33"+this.phone.slice(1));
+      this.testpost.phone = this.phone;
     };
     this.testpost. yield
     if (this. yield) {
+      this.testpost.yield = this.yield;
     };
      this.testpost.humidity
     if (this.humidity) {
+      this.testpost.humidity = this.humidity;
     }; 
     this.testpost.comment
     if (this.comment) {
+      this.testpost.comment = this.comment;
     }; 
     this.testpost.targetPrice
     if (this.targetPrice) {
+      this.testpost.targetPrice = this.targetPrice;
     }; 
-   
+    this.info.postBarley(this.testpost).subscribe(
+      /* (myobservation: BarleyObservation) => {
+         alert("la donnée a bien été postée");
+       }*/
+    )
+    console.log(this.testpost)
     
 
   }
@@ -121,13 +154,11 @@ export class FormulaireComponent implements OnInit {
 
   ngOnInit() {
 
-    this.info.postBarley(this.testpost).subscribe(
-      /* (myobservation: BarleyObservation) => {
-         alert("la donnée a bien été postée");
-       }*/
-    )
+    
 
   }
+
+
 
 }
 
