@@ -14,3 +14,7 @@ strong{
 .live {
     background-color: #e9b537
 }
+
+.link {
+    cursor: grab;
+}
