@@ -9,6 +9,7 @@ import { StatsComponent } from './stats/stats.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ButtonsTypeComponent } from './buttons-type/buttons-type.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
     StatsComponent,
     HeaderComponent,
     FooterComponent,
+    ButtonsTypeComponent,
    
   ],
   imports: [

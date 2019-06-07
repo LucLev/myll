@@ -6,6 +6,7 @@ import { NewInfoComponent } from './new-info/new-info.component';
 import { StatsComponent } from './stats/stats.component';
 import { FooterComponent } from './footer/footer.component'
 import { HeaderComponent } from './header/header.component';
+import { ButtonsTypeComponent } from './buttons-type/buttons-type.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'stats', component: StatsComponent },
   { path: 'header', component: HeaderComponent },
   { path: 'footer', component: FooterComponent},
+  { path: 'buttonstype', component: ButtonsTypeComponent},
   { path: '**', component: HomeComponent },
 
 ];
