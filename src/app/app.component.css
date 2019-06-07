@@ -1,0 +1,9 @@
+div {
+    background-image: url('../assets/magalouche.jpg');
+    background-size: 100%;
+    min-height: 100%;
+    background-position: center center;
+    background-size: cover
+}
+
+

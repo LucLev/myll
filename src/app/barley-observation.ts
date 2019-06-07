@@ -1,3 +1,4 @@
+import {Coordinates} from "./coordinates";
 export class BarleyObservation {
      
      specificWeight: number;
@@ -15,6 +16,6 @@ export class BarleyObservation {
      place: string;
      coordinates: Coordinates;
      id?: string;
-     createdAt: string;
+     createdAt?: string;
 
 }

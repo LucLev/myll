@@ -1,0 +1,160 @@
+<div class="contents mx-auto rounded mb-3">
+  <app-header></app-header>
+  <div class="row">
+      <div class="col-4"></div>
+      <div class="container row col-4">
+        <button mat-raised-button type="button" class="bouton col-5 btn btn-success font-weight-bold mt-3 mb-3" [routerLink]="['']">CARTE</button>
+        <div class="col"></div>
+        <button mat-raised-button type="button" class="bouton col-5 btn btn-success font-weight-bold mt-3 mb-3">VOS
+          DONNEES</button>
+      </div>
+    </div>
+<form (ngSubmit)="onSubmit()" #myForm="ngForm" class="col-10 mx-auto">
+
+  <div class="form-group">
+    <label for="specificWeight">Poid volumique<span class="requis">*</span> : </label>
+    <input required [(ngModel)]="specificWeight" name="specificWeight" #SpecificWeight="ngModel" id="specificWeight"
+      type="number" class="form-control">
+  </div>
+  <div *ngIf="myForm.submitted">
+    <div class="alert alert-danger" *ngIf=" SpecificWeight.errors ">
+      <span *ngIf="SpecificWeight.errors.required">Poid volumique requis.</span>
+      <span *ngIf="SpecificWeight.errors.minlength">Poid volumique minimum.</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="yieldNotation">Notation de rendement<span class="requis">*</span> :</label>
+    <input required min="1" max="5" [(ngModel)]="yieldNotation" #YieldNotation="ngModel" name="yNotation"
+      id="yieldNotation" type="number" class="form-control">
+  </div>
+  <div *ngIf="myForm.submitted">
+    <div class="alert alert-danger" *ngIf=" YieldNotation.errors ">
+      <div *ngIf="YieldNotation.errors.required">Une notation est requise.</div>
+      <div *ngIf="YieldNotation.errors.min.max">Une notation entre 1 et 5 inclus.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="place">Ville<span class="requis">*</span> :</label>
+    <input required minlength="2" maxlength="15" [(ngModel)]="place" #Place="ngModel" id="place" name="place"
+      type="text" class="form-control">
+  </div>
+  <div *ngIf="myForm.submitted">
+    <div class="alert alert-danger" *ngIf="Place.errors">
+      <div *ngIf="Place.errors.required">Champs requis.</div>
+      <div *ngIf="Place.errors.minlength">Champs requis 2 charactères(min).</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="variety">Variété :</label>
+    <input minlength="5" maxlength="30" [(ngModel)]="variety" #Variety="ngModel" name="variety" id="variety" type="text"
+      class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="yield">Rendement<span class="requis">*</span> :</label>
+    <input [(ngModel)]="yield" #Yield="ngModel" id="yield" name="yield" type="number" class="form-control">
+  </div>
+  <div *ngIf="myForm.submitted">
+    <div class="alert alert-danger" *ngIf="Yield.errors">
+      <div *ngIf="Yield.errors.required">Champs requis (chiffre(s)).</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="humidity">Humidité :</label>
+    <input [(ngModel)]="humidity" #Humidity="ngModel" name="humidity" id="humidity" type="number" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for=" cultivationMethod">Produit Azote utilisé<span class="requis">*</span> :</label>
+    <input required minlength="2" maxlength="30" [(ngModel)]="nitrogenProductUsed" #NitrogenProductUsed="ngModel"
+      name="prduct" id="nitrogenProductUsed" type="text" class="form-control">
+  </div>
+  <div *ngIf="myForm.submitted">
+    <div class="alert alert-danger" *ngIf="NitrogenProductUsed.errors">
+      <div *ngIf="NitrogenProductUsed.errors.required">Champs requis.</div>
+      <div *ngIf="NitrogenProductUsed.errors.minlength">Le champs doit contenir min 2 lettres.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="nitrogenQuantityUsed">Quantité de Nitrogène<span class="requis">*</span> :</label>
+    <input required [(ngModel)]="nitrogenQuantityUsed" #NitrogenQuantityUsed="ngModel" name="nitroQtUsed"
+      id="nitrogenQuantityUsed" type="number" class="form-control">
+  </div>
+  <div *ngIf="myForm.submitted">
+    <div class="alert alert-danger" *ngIf="NitrogenQuantityUsed.errors">
+      <div *ngIf="NitrogenQuantityUsed.errors.required">Champs requis.</div>
+      <div *ngIf="NitrogenQuantityUsed.errors.minlength">Le champs doit comporter un chiffre.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for=" cultivationMethod">Technique de production<span class="requis">*</span> :</label>
+    <select class="form-control" id="tp" required [(ngModel)]="cultivationMethod" #CultivationMethod="ngModel"
+      name="cultiv">
+      <option [value]="con">Conventionnelle</option>
+      <option [value]="scm">Méthode simplifié</option>
+    </select>
+
+  </div>
+
+
+  <div class="form-group">
+    <label for=" targetPrice">Prix ciblés :</label>
+    <input minlength="1" maxlength="15" [(ngModel)]="targetPrice" #TargetPrice="ngModel" name="tarPrice"
+      id="targetPrice" type="number" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email<span class="requis">*</span> :</label>
+    <input required minlength="9" maxlength="50" [(ngModel)]="email" #Email="ngModel" n="ngModel"
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" type="text" placeholder="Email" name="mail"
+      class="form-control">
+  </div>
+  <div *ngIf="myForm.submitted">
+    <div class="alert alert-danger" *ngIf="Email.errors">
+      <div *ngIf="Email.errors.required">Email requis.</div>
+      <div *ngIf="Email.errors.pattern ">Email non valide.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="phoneNumber">Numéro de téléphone<span class="requis">*</span> :</label>
+    <input required minlength="10" maxlength="10" [(ngModel)]="phoneNumber" #PhoneNumber="ngModel" name="Numéro de téléphone"
+      id="phoneNumber" type="text" placeholder="Numéro de téléphone" class="form-control">
+  </div>
+  <div *ngIf="myForm.submitted">
+    <div class="alert alert-danger" *ngIf=" PhoneNumber.errors">
+      <div *ngIf="PhoneNumber.errors.required">Numéro de téléphone requis.</div>
+      <div *ngIf="PhoneNumber.errors.minlength">Numéro de téléphone non valide.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="typeofseed">Type de récolte :</label>
+    <select class="form-control" id="tseed" required>
+      <option [value]="Corn">Maïs</option>
+      <option [value]="Barley">Orges</option>
+      <option [value]="Wheat">Blé</option>
+      <option [value]="Rapseed">Colza</option>
+      <option [value]="Sunflower">Tournesol</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="comment"></label>
+    <textarea class="col-12" id="" cols="50" rows="5"></textarea>
+  </div>
+  <div class="requiredEmpty">
+      <span>*</span> <span class="required font-italic">Champs obligatoires</span>
+    </div>
+    <br>
+  <button class="btn btn-primary" type="submit">ENVOYER </button>
+</form>
+<br>
+</div>
+<app-footer></app-footer>

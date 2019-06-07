@@ -1,0 +1,17 @@
+.contents {
+    width:70%;
+    background-color: #f8f8f8
+}
+
+.bouton:hover {
+    background-color: #e9b537
+}
+
+.requiredEmpty {
+    color: red;
+    font-weight: 600;
+}
+.requis {
+    color: red;
+    font-weight: 600;
+}

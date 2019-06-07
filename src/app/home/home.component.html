@@ -1,36 +1,44 @@
-<app-header></app-header> 
-<div class="margin">
+<div class="back mx-auto rounded mb-5 pb-3">
+  <app-header></app-header>
+  <br>
+  <!-- Nav -->
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="container row col-4">
+      <button mat-raised-button type="button" class="bouton col-5 btn btn-success font-weight-bold" [routerLink]="['']">CARTE</button>
+      <div class="col"></div>
+      <button mat-raised-button type="button" class="bouton col-5 btn btn-success font-weight-bold" [routerLink]="['formulaire']">VOS
+        DONNEES</button>
+    </div>
+  </div>
+  <br>
+  <!-- Sous-Nav -->
+  <div class="container">
     <div class="row">
-        <div class="col-3 offset-1">
-            <button class="favorite styled"type="button">Carte</button>
-        </div>
-        
-        <div class="col-3 offset-1">
-            <button class="favorite styled"type="button">Mes infos</button>
-        </div>
-
-        <div class="col-3 offset-1">
-            <button class="favorite styled"type="button">Stat</button> 
-        </div>
+  
+      <div class="col-2 text-center">
+        <button mat-button (click)="displayWheats()" ><img src="../../assets/img/ble.jpg" alt="" class="mais mt-1 mb-4 border rounded"></button>
+      </div>
+      <div class="col-3 text-center">
+        <button mat-button (click)="displayRapeseeds()"><img src="../../assets/img/colza.jpg" alt=""
+            class="mais mt-1 border rounded"></button>
+      </div>
+      <div class="col-2 text-center">
+        <button mat-button (click)="displayCorns()"><img src="../../assets/img/mais.jpg" alt="" class="mais mt-1 border rounded"></button>
+      </div>
+      <div class="col-3 text-center">
+        <button mat-button (click)="displayBarleys()"><img src="../../assets/img/orge.jpg" alt="" class="mais mt-1 border rounded"></button>
+      </div>
+      <div class="col-2 text-center">
+        <button mat-button (click)="displaySunflowers()"><img src="../../assets/img/tournesol.jpg" alt="" class="mais mt-1 border rounded"></button>
+      </div>
     </div>
+  </div>
+  <!-- Map -->
+  <div class="container mb-3">
+    <div class="col-12 pb-3" id="map">
+    </div>
+  </div>
 </div>
-<div class="container">
-    <div class="col-8 offset-2" id="map">
-      <!-- Map -->
-    </div>
-  </div>
-  <input type="number" [(ngModel)]="setLat1">
-  <input type="number" [(ngModel)]="setLon1">
-  <input type="number" [(ngModel)]="setIcon">
-  
-  <button (click)="addToMap(setLat1,setLon1,'sauce',setIcon)">BOUTTOU</button>
-  <span>{{message}}</span>
-  
-  <div *ngIf="geolocationPosition">
-   <!--{{geolocationPosition.coords}}-->
-   {{geolocationPosition.coords.latitude}}
-   {{geolocationPosition.coords.longitude}}
-  </div>
-  <button (click)="youAreHere()">where am i?</button>
-  <button (click)="getNearStats(0)">GETSTAT</button>
-  <div>{{yieldavg}}</div>
+
+<app-footer></app-footer>

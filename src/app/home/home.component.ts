@@ -31,8 +31,8 @@ export class HomeComponent implements OnInit {
     this.myIcon
   ]
 
-  myservice: MyServiceService
-  geolocationPosition: any
+  myservice: MyServiceService;
+  geolocationPosition: any;
   lat: number = 48.852969;
   lon: number = 2.349903;
   millMap = null;
@@ -167,7 +167,7 @@ export class HomeComponent implements OnInit {
       L.marker([this.rapeseeds[i].coordinates.latitude, this.rapeseeds[i].coordinates.longitude], { icon: this.iconArray[2] }).bindPopup(this.rapeseeds[i].place).addTo(this.millMap).openPopup();
     }
   }
-  displaySunflower() {
+  displaySunflowers() {
     for (let i = 0; i <= this.sunflowers.length; i++) {
       L.marker([this.sunflowers[i].coordinates.latitude, this.sunflowers[i].coordinates.longitude], { icon: this.iconArray[3] }).bindPopup(this.sunflowers[i].place).addTo(this.millMap).openPopup();
     }
@@ -176,10 +176,6 @@ export class HomeComponent implements OnInit {
     for (let i = 0; i <= this.wheats.length; i++) {
       L.marker([this.wheats[i].coordinates.latitude, this.wheats[i].coordinates.longitude], { icon: this.iconArray[4] }).bindPopup(this.wheats[i].place).addTo(this.millMap).openPopup();
     }
-  }
-  displayAll() {
-
-
   }
 
 
@@ -219,7 +215,7 @@ export class HomeComponent implements OnInit {
         console.log(this.barleys)
         this.barleys = array_Of_Barley;
         console.log(this.barleys)
-        this.displayBarleys()
+        //this.displayBarleys()
       }
     );
     this.myservice.getWheat().subscribe(
@@ -227,7 +223,7 @@ export class HomeComponent implements OnInit {
         console.log(this.wheats)
         this.wheats = array_Of_Wheat;
         console.log(this.wheats)
-        this.displayWheats()
+        //this.displayWheats()
       }
     );
     this.myservice.getSunflower().subscribe(
@@ -235,7 +231,7 @@ export class HomeComponent implements OnInit {
         console.log(this.sunflowers)
         this.sunflowers = array_Of_Sunflower;
         console.log(this.sunflowers)
-        this.displaySunflower()
+        //this.displaySunflowers()
       }
     );
     this.myservice.getCorn().subscribe(
@@ -243,7 +239,7 @@ export class HomeComponent implements OnInit {
         console.log(this.corns)
         this.corns = array_Of_Corn;
         console.log(this.corns)
-        this.displayCorns()
+        //this.displayCorns()
       }
     );
     this.myservice.getRapeseed().subscribe(
@@ -251,7 +247,7 @@ export class HomeComponent implements OnInit {
         console.log(this.rapeseeds)
         this.rapeseeds = array_Of_Rapeseed;
         console.log(this.rapeseeds)
-        this.displayRapeseeds()
+        //this.displayRapeseeds()
       }
     );
 
