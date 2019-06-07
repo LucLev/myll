@@ -1,12 +1,10 @@
-<div class="contents mx-auto rounded mb-3">
+<div class="contents mx-auto rounded mb-3 col-12 col-sm-10 col-md-8">
   <app-header></app-header>
   <div class="row">
       <div class="col-4"></div>
-      <div class="container row col-4">
-        <button mat-raised-button type="button" class="bouton col-5 btn btn-success font-weight-bold mt-3 mb-3" [routerLink]="['']">CARTE</button>
-        <div class="col"></div>
-        <button mat-raised-button type="button" class="bouton col-5 btn btn-success font-weight-bold mt-3 mb-3">VOS
-          DONNEES</button>
+      <div class="container row col-8 col-sm-6 col-md-5">
+        <button mat-raised-button type="button" class="bouton col-8 col-sm-6 col-md-5 btn btn-success font-weight-bold mt-3 mb-3" [routerLink]="['']">CARTE</button>
+        <button mat-raised-button type="button" class="bouton col-8 col-sm-6 col-md-5 btn btn-success font-weight-bold mt-3 mb-3">VOS DONNEES</button>
       </div>
     </div>
 <form (ngSubmit)="onSubmit()" #myForm="ngForm" class="col-10 mx-auto">

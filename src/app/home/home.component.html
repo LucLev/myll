@@ -1,44 +1,47 @@
-<div class="back mx-auto rounded mb-5 pb-3">
-  <app-header></app-header>
-  <br>
-  <!-- Nav -->
-  <div class="row">
-    <div class="col-4"></div>
-    <div class="container row col-4">
-      <button mat-raised-button type="button" class="bouton col-5 btn btn-success font-weight-bold" [routerLink]="['']">CARTE</button>
-      <div class="col"></div>
-      <button mat-raised-button type="button" class="bouton col-5 btn btn-success font-weight-bold" [routerLink]="['formulaire']">VOS
-        DONNEES</button>
-    </div>
-  </div>
-  <br>
-  <!-- Sous-Nav -->
-  <div class="container">
+<div class="back mx-auto rounded mb-5 pb-3 col-12 col-sm-10 col-md-8">
+    <app-header></app-header>
+    <br>
+    <!-- Nav -->
     <div class="row">
-  
-      <div class="col-2 text-center">
-        <button mat-button (click)="displayWheats()" ><img src="../../assets/img/ble.jpg" alt="" class="mais mt-1 mb-4 border rounded"></button>
-      </div>
-      <div class="col-3 text-center">
-        <button mat-button (click)="displayRapeseeds()"><img src="../../assets/img/colza.jpg" alt=""
-            class="mais mt-1 border rounded"></button>
-      </div>
-      <div class="col-2 text-center">
-        <button mat-button (click)="displayCorns()"><img src="../../assets/img/mais.jpg" alt="" class="mais mt-1 border rounded"></button>
-      </div>
-      <div class="col-3 text-center">
-        <button mat-button (click)="displayBarleys()"><img src="../../assets/img/orge.jpg" alt="" class="mais mt-1 border rounded"></button>
-      </div>
-      <div class="col-2 text-center">
-        <button mat-button (click)="displaySunflowers()"><img src="../../assets/img/tournesol.jpg" alt="" class="mais mt-1 border rounded"></button>
-      </div>
+        <div class="container offset-3 offset-md-4 row col-8 col-sm-8 col-md-4">
+            <button mat-raised-button type="button" class="bouton col-8 col-sm-7 col-md-6 btn btn-success font-weight-bold"
+                [routerLink]="['']">CARTE</button>
+            <button mat-raised-button type="button" class="bouton col-8 col-sm-7 col-md-6 btn btn-success font-weight-bold"
+                [routerLink]="['formulaire']">VOS DONNEES</button>
+        </div>
     </div>
-  </div>
-  <!-- Map -->
-  <div class="container mb-3">
-    <div class="col-12 pb-3" id="map">
+    <br>
+    <!-- Sous-Nav -->
+    <div class="container">
+        <div class="row offset-md-1">
+
+            <div class="col-3 col-sm-2 text-center">
+                <button mat-button (click)="displayWheats()"><img src="../../assets/img/ble.jpg" alt=""
+                        class="mais mt-1 mb-4 border rounded"></button>
+            </div>
+            <div class="col-3 col-sm-2 text-center">
+                <button mat-button (click)="displayRapeseeds()"><img src="../../assets/img/colza.jpg" alt=""
+                        class="mais mt-1 border rounded"></button>
+            </div>
+            <div class="col-3 col-sm-2 text-center">
+                <button mat-button (click)="displayCorns()"><img src="../../assets/img/mais.jpg" alt=""
+                        class="mais mt-1 border rounded"></button>
+            </div>
+            <div class="col-3 offset-2 offset-md-0 col-sm-2 text-center">
+                <button mat-button (click)="displayBarleys()"><img src="../../assets/img/orge.jpg" alt=""
+                        class="mais mt-1 border rounded"></button>
+            </div>
+            <div class="col-3 col-sm-2 text-center">
+                <button mat-button (click)="displaySunflowers()"><img src="../../assets/img/tournesol.jpg" alt=""
+                        class="mais mt-1 border rounded"></button>
+            </div>
+        </div>
     </div>
-  </div>
+    <!-- Map -->
+    <div class="container mb-3">
+        <div class="col-12 pb-3" id="map">
+        </div>
+    </div>
 </div>
 
 <app-footer></app-footer>
