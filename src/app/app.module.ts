@@ -9,6 +9,7 @@ import { NewInfoComponent } from './new-info/new-info.component';
 import { StatsComponent } from './stats/stats.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
+import {MatButtonModule} from '@angular/material/button';
 import { FooterComponent } from './footer/footer.component';
 import { ButtonsTypeComponent } from './buttons-type/buttons-type.component';
 
@@ -27,6 +28,8 @@ import { ButtonsTypeComponent } from './buttons-type/buttons-type.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatButtonModule,
+    HttpClientModule,
     FormsModule,
     HttpClientModule,
   ],
